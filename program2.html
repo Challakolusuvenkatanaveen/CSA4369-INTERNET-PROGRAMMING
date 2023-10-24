@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Register</h2>
+            <form action="register.php" method="post">
+                <!-- Registration form fields go here -->
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <!-- Login form fields go here -->
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>View Challan</h2>
+            <button onclick="viewChallan()">View Challan</button>
+            <div id="challan-result"></div>
+        </div>
+
+        <div class="form-container">
+            <h2>View Case Filed</h2>
+            <button onclick="viewCase()">View Case Filed</button>
+            <div id="case-result"></div>
+        </div>
+    </div>
+  <button><a href="rules.html">rules</a>
+  <button><a href="manage.html">live traffic</a>
+
+    <script src="script.js">
+function viewChallan() {
+    window.open('challan.html','_blank');
+}
+
+function viewCase() {
+    // Code to view filed cases goes here
+    document.getElementById("case-result").innerHTML = "Case details displayed here.";
+}
+</script>
+
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+</style>
+<script>
+function viewChallan() {
+    window.location.href = 'challan.html';
+}
+
+function viewCase() {
+    // Code to view filed cases goes here
+    document.getElementById("case-result").innerHTML = "Case details displayed here.";
+}
+</script>
+
+</body>
+
+</html>

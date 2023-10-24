@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Route Information</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Route Information</h1>
+
+    <!-- Form to create route information -->
+    <form id="route-form">
+        <label for="route-name">Route Name:</label>
+        <input type="text" id="route-name" required><br>
+
+        <label for="bus-timings">Bus Timings:</label>
+        <textarea id="bus-timings" rows="4" cols="50" placeholder="Enter bus timings for the route..." required></textarea><br>
+
+        <button type="button" onclick="createRoute()">Create Route</button>
+    </form>
+
+    <h2>Bus Timings for Selected Route</h2>
+    <div id="bus-timings-output"></div>
+
+    <script>
+        function createRoute() {
+            var routeName = document.getElementById("route-name").value;
+            var busTimings = document.getElementById("bus-timings").value;
+
+            // Store route information in a data structure or send it to the server-side for storage
+
+            // For demonstration, displaying bus timings for the selected route
+            document.getElementById("bus-timings-output").innerText = "Bus Timings for Route " + routeName + ":\n" + busTimings;
+        }
+    </script>
+</body>
+</html>

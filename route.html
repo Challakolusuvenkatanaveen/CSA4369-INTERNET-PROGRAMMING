@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .menu a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .content {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="#">Add Money - eWallet</a>
+            <a href="#">Buy Bus eTicket</a>
+            <a href="#">Apply New Bus Pass</a>
+            <a href="#">Renewal Bus Pass</a>
+            <a href="#">Apply Student & Route Pass</a>
+            <a href="#">Get QR Code for Bus Pass</a>
+            <a href="#">Calculate Expected Time to Reach</a>
+        </div>
+
+        <div class="content">
+            <h2>Apply for a Bus Pass</h2>
+            <form id="passApplicationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="route">Preferred Route:</label>
+                <input type="text" id="route" name="route" required><br>
+                <input type="submit" value="Apply">
+            </form>
+
+            <h2>Route Map</h2>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling form submission (to be implemented)
+        document.getElementById('passApplicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle form submission (send data to server, show confirmation, etc.)
+            // This part needs to be implemented using backend technologies.
+        });
+
+        // JavaScript for displaying Google Maps route map
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE }, // Set your initial map center
+                zoom: 12 // Set the initial zoom level
+            });
+
+            // Add markers, polylines, or other map components as needed
+        }
+    </script>
+
+    <!-- Include the Google Maps API with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+</body>
+
+</html>

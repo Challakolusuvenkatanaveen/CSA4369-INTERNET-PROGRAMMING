@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Management System - Renewal Bus Pass</title>
+    <style>
+        /* Your existing CSS styles */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .form-input {
+            margin-bottom: 15px;
+        }
+
+        .form-input label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-input input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form-input input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <!-- ... your existing menu items ... -->
+        </div>
+
+        <div class="content">
+            <div class="form-container">
+                <h2>Renew Your Bus Pass</h2>
+                <form id="renewPassForm">
+                    <div class="form-input">
+                        <label for="passNumber">Bus Pass Number:</label>
+                        <input type="text" id="passNumber" name="passNumber" placeholder="Enter your bus pass number" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="expiryDate">Expiry Date:</label>
+                        <input type="text" id="expiryDate" name="expiryDate" placeholder="Enter the expiry date" required>
+                    </div>
+                    <div class="form-input">
+                        <input type="submit" value="Renew Pass">
+                    </div>
+                </form>
+                <div id="renewalResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('renewPassForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const passNumber = document.getElementById('passNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+
+            // You can send this data to the server for processing via AJAX.
+            // For this example, we're just displaying a success message.
+            const successMessage = `Bus pass number ${passNumber} renewed successfully!<br>New Expiry Date: ${expiryDate}`;
+
+            document.getElementById('renewalResult').innerHTML = successMessage;
+        });
+    </script>
+</body>
+
+</html>

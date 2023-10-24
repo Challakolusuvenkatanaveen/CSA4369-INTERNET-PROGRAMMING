@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Management System - Apply New Bus Pass</title>
+    <style>
+        /* Your existing CSS styles */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .form-input {
+            margin-bottom: 15px;
+        }
+
+        .form-input label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-input input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form-input input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <!-- ... your existing menu items ... -->
+        </div>
+
+        <div class="content">
+            <div class="form-container">
+                <h2>Apply for a New Bus Pass</h2>
+                <form id="newPassForm">
+                    <div class="form-input">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-input">
+                        <input type="submit" value="Submit Application">
+                    </div>
+                </form>
+                <div id="applicationResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('newPassForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+
+            // You can send this data to the server for processing via AJAX.
+            // For this example, we're just displaying a success message.
+            const successMessage = `Application submitted successfully!<br>Full Name: ${fullName}<br>Email: ${email}`;
+
+            document.getElementById('applicationResult').innerHTML = successMessage;
+        });
+    </script>
+</body>
+
+</html>

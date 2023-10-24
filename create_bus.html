@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Bus Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Bus Details</h1>
+
+    <!-- Form to create bus details -->
+    <form id="bus-details-form">
+        <label for="bus-number">Bus Number:</label>
+        <input type="text" id="bus-number" required><br><br>
+
+        <label for="route">Route:</label>
+        <input type="text" id="route" required><br><br>
+
+        <label for="departure-time">Departure Time:</label>
+        <input type="text" id="departure-time" required><br><br>
+
+        <button type="button" onclick="addBus()">Add Bus</button>
+    </form>
+
+    <!-- Table to display bus details -->
+    <h2>Bus Details</h2>
+    <table id="bus-table">
+        <tr>
+            <th>Bus Number</th>
+            <th>Route</th>
+            <th>Departure Time</th>
+        </tr>
+    </table>
+
+    <script>
+        function addBus() {
+            var busNumber = document.getElementById("bus-number").value;
+            var route = document.getElementById("route").value;
+            var departureTime = document.getElementById("departure-time").value;
+
+            if (busNumber && route && departureTime) {
+                // Add bus details to the table
+                var table = document.getElementById("bus-table");
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = busNumber;
+                cell2.innerHTML = route;
+                cell3.innerHTML = departureTime;
+
+                // Clear form fields
+                document.getElementById("bus-number").value = '';
+                document.getElementById("route").value = '';
+                document.getElementById("departure-time").value = '';
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?php
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Handle file upload
+    $targetDirectory = "uploads/"; // Specify the directory where you want to store uploaded files
+    $targetFile = $targetDirectory . basename($_FILES["proofPhoto"]["name"]);
+
+    // Check if file is successfully uploaded
+    if (move_uploaded_file($_FILES["proofPhoto"]["tmp_name"], $targetFile)) {
+        // File uploaded successfully, now process other form data
+        $caseNumber = $_POST["caseNumber"];
+        $description = $_POST["description"];
+
+        // TODO: Save $targetFile (image file path), $caseNumber, and $description to your database or perform necessary actions
+
+        // Example response
+        echo "Case created successfully!";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>

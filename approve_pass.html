@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Bus Pass</title>
+    <style>
+        .pass-details {
+            margin-bottom: 20px;
+        }
+        .approve-btn, .reject-btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Approve Bus Pass</h1>
+
+    <div class="pass-details">
+        <strong>Student Name:</strong> John Doe<br>
+        <strong>School:</strong> XYZ School<br>
+        <strong>Validity Period:</strong> 01/01/2023 - 31/12/2023<br>
+        <strong>Amount Paid:</strong> $50.00<br>
+        <strong>Eligibility:</strong> Eligible for Free Pass<br>
+    </div>
+
+    <button class="approve-btn" onclick="approvePass()">Approve Pass</button>
+    <button class="reject-btn" onclick="rejectPass()">Reject Pass</button>
+
+    <script>
+        function approvePass() {
+            // Implement logic to approve the bus pass
+            alert("Bus pass approved successfully!");
+        }
+
+        function rejectPass() {
+            // Implement logic to reject the bus pass
+            alert("Bus pass rejected!");
+        }
+    </script>
+</body>
+</html>

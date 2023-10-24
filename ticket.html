@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .ticket {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        .ticket-header {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .ticket-details {
+            margin-bottom: 20px;
+        }
+
+        .ticket-details p {
+            margin: 0;
+        }
+
+        .ticket-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            .ticket, .ticket * {
+                visibility: visible;
+            }
+
+            .ticket {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ticket">
+        <div class="ticket-header">
+            Bus Ticket
+        </div>
+        <div class="ticket-details">
+            <p><strong>Passenger:</strong> John Doe</p>
+            <p><strong>Route:</strong> Route 123</p>
+            <p><strong>Seat:</strong> 15A</p>
+            <p><strong>Departure:</strong> 10:00 AM</p>
+            <p><strong>Price:</strong> $10.00</p>
+        </div>
+        <div class="ticket-footer">
+            Thank you for choosing our service!
+        </div>
+    </div>
+
+    <script>
+        // You can populate ticket details dynamically using JavaScript if needed.
+    </script>
+</body>
+
+</html>

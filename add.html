@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .menu a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .content {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="#">Add Money - eWallet</a>
+            <a href="#">Buy Bus eTicket</a>
+            <a href="#">Apply New Bus Pass</a>
+            <a href="#">Renewal Bus Pass</a>
+            <a href="#">Apply Student & Route Pass</a>
+            <a href="#">Get QR Code for Bus Pass</a>
+            <a href="#">Calculate Expected Time to Reach</a>
+        </div>
+
+        <div class="content">
+            <h2>Calculate Expected Time to Reach</h2>
+            <label for="distance">Distance (in kilometers):</label>
+            <input type="number" id="distance" placeholder="Enter distance">
+            <label for="speed">Average Speed (in km/h):</label>
+            <input type="number" id="speed" placeholder="Enter speed">
+            <button onclick="calculateTime()">Calculate</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateTime() {
+            var distance = parseFloat(document.getElementById("distance").value);
+            var speed = parseFloat(document.getElementById("speed").value);
+
+            if (isNaN(distance) || isNaN(speed) || distance <= 0 || speed <= 0) {
+                document.getElementById("result").innerText = "Please enter valid distance and speed values.";
+            } else {
+                var time = distance / speed;
+                document.getElementById("result").innerText = "Expected time to reach: " + time.toFixed(2) + " hours.";
+            }
+        }
+    </script>
+</body>
+
+</html>
